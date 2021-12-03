@@ -8,10 +8,13 @@
     <p>
         Ключевые слова: <input type="text" asp-for="SearchString" />
         <select asp-for="TransportClassSearch" asp-items="Model.TransportClasses">
-            <option value="">All</option>
+            <option value="">Отобразить всё</option>
         </select>
         <select asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
-            <option value="">All</option>
+            <option value="">Отобразить всё</option>
+        </select>
+        <select asp-for="OrganisationSearch" asp-items="Model.Organisations">
+            <option value="">Отобразить всё</option>
         </select>
         <input type="submit" value="Фильтр" ; style="border-color:white;" />
 
@@ -47,15 +50,18 @@
                             <div style="display: flex; justify-content: space-between;">
                                 <h3 style="color: #181818;">@item.Title</h3><h6 style="padding-right: 5px; color: #181818;">20.11.2021</h6>
                             </div>
-                            <h6 style="text-align: left; color: #181818;">@item.DevTeam</h6>
+                            <h6 style="text-align: left; color: #181818;">Команда @item.DevTeam</h6>
                         </header>
                         <div>
                             <p style="text-align: left; color: #181818;">@item.ShortDesc</p>
                         </div>
                         <footer>
                             <h6 style="text-align: left; color: #181818;"></h6>
-                            Оценка экспертов + звезды
-                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                            @{ for (int i = 0; i < item.Rate; i++)
+                                {
+                                    <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
+                                } }
+                            <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a>
                         </footer>
 
                     </div>

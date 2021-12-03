@@ -1,0 +1,72 @@
+﻿@page
+@model Vitrina.Pages.DevTeamCardModel
+
+@{
+    ViewData["Title"] = "DevTeamCard";
+}
+
+<h1>DevTeamCard</h1>
+<div style="margin: 0% 15% 0% 15%">
+    <<div id="block1" style="overflow:hidden; margin-right: auto;
+box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
+        <img src="@Model.DevTeam.ImageString"
+             style="object-fit: cover; border-radius: 20px 20px 0px 0px; height: 200px; width: 100% "><img />
+        <text style="margin-left: 22px; font-style: normal; font-weight: bold; font-size: 44px; line-height: 67px; color: #181818;">@Html.DisplayFor(model => model.DevTeam.Name)</text>
+
+        <br />
+        <br />
+    </div>
+
+
+    <div style="">
+        <div style="float:left; width: 70%; margin-top: 22px; margin-right: auto; box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 24px; padding: 30px 30px 30px 30px ">
+
+            <b>Реализованные проекты:</b>
+            <p style="">
+                @Html.DisplayFor(model => model.DevTeam.Progects)
+            </p>
+ 
+            <a asp-page="./Index">Назад</a>
+        </div>
+
+
+        <div style="float: right; width: 27%; margin-top: 22px; border-radius: 24px; padding: 30px 30px 30px 30px; box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1)">
+            <b>Заинтересовала команда?</b>
+            <p>Запросите контакты у наших администраторов</p>
+            <button name="button" style="position: static; left: 0%; right: 0%; top: 0%; bottom: 0%; display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 16px 20px; border: 1px solid #009A96; box-sizing: border-box; border-radius: 16px; flex: none; order: 0; align-self: stretch; flex-grow: 0; margin: 0px 0px; "><text style="position: static; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; /* identical to box height */ /* Акцентный цвет */ color: #009A96; /* Inside Auto Layout */ flex: none; order: 0; flex-grow: 0; margin: 0px 10px; ">Связаться</text></button>
+        </div>
+
+
+
+
+    </div>
+</div>
+<div>
+    <h4>DevTeam</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DevTeam.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevTeam.Name)
+        </dd>
+        <dt class="col-sm-2">
+            
+            @Html.DisplayNameFor(model => model.DevTeam.ImageString)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.DevTeam.ImageString" alt="@Model.DevTeam.ImageString" style="width:150px" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DevTeam.Progects)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevTeam.Progects)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DevTeam.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

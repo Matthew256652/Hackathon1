@@ -2,14 +2,9 @@
 @model Vitrina.Pages.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.SingleStartup.Title; 
 }
 
-<h1>Details</h1>
-
-@{
-    ViewData["Title"] = "Details";
-}
 <div style="margin: 0% 15% 0% 15%">
     <<div id="block1" style="overflow:hidden; margin-right: auto;
 box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
@@ -25,7 +20,9 @@ box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
                 } }
         </p>
     </div>
-    <text style="margin-left: 22px; position: static; left: 0px; font-style: normal; font-weight: normal; font-size: 18px; line-height: 24px; color: rgba(24, 24, 24, 0.6); /* Inside Auto Layout */ flex: none; order: 1; flex-grow: 0;">@Html.DisplayFor(model => model.SingleStartup.DevTeam)</text>
+    <a asp-route-id="@Int32.Parse(Model.SingleStartup.DevTeam)" asp-page="./DevTeamCard">
+        <text style="margin-left: 22px; position: static; left: 0px; font-style: normal; font-weight: normal; font-size: 18px; line-height: 24px; color: rgba(24, 24, 24, 0.6); /* Inside Auto Layout */ flex: none; order: 1; flex-grow: 0;">Команда @Html.DisplayFor(model => model.SingleStartup.DevTeam)</text>
+    </a>
     <br />
     <br />
 </div>

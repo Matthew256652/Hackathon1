@@ -59,6 +59,10 @@ border-radius: 16px; margin-bottom:25px;">
         [BindProperty(SupportsGet = true)]
         public string TechDirectionsSearch { get; set; }
         public SelectList TexhDirections { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string OrganisationSearch { get; set; }
+        public SelectList Organisations { get; set; }
+        public List<string> OrganisationsDictionary { get; set; } = new List<string> { "Московский метрополитен", "Мосгортранс", "ЦОДД", "Организатор перевозок", "Мостранспроект", "АМПП" };
         public IndexModel(Vitrina.Data.VitrinaContext context)
         {
             _context = context;
@@ -83,8 +87,15 @@ border-radius: 16px; margin-bottom:25px;">
             {
                 startups = startups.Where(r => r.TransportClass.Contains(TransportClassSearch));
             }
-            TransportClasses = new SelectList(new List<string> { "Метрополитен (электропоезда)", "Автобусы", "Электробусы ", "Трамваи", "Троллейбус", "Каршеринг" });
+
+            if (!string.IsNullOrEmpty(OrganisationSearch))
+            {
+                int filterCode = OrganisationsDictionary.IndexOf(OrganisationSearch);
+                startups = startups.Where(r => r.Organisation == filterCode);
+            }
+            TransportClasses = new SelectList(new List<string> { "Метрополитен (электропоезда)", "Автобусы", "Электробусы ", "Трамваи", "Троллейбус", "Каршеринг", "Экспресс-маршруты","Монорельсовая дорога","МЦК","Такси","Аэроэкспресс","Маршрутное такси","Речные суда","Личные автомобили","Альтернативный вид транспорта","Другое" });
             TexhDirections = new SelectList(new List<string> { "Доступный и комфортный городской транспорт", "Новые виды мобильности", "Безопасность дорожного движения", "Здоровые улицы и экология", "Цифровые технологии в транспорте" });
+            Organisations = new SelectList(OrganisationsDictionary); 
             SingleStartup = await startups.ToListAsync();
         }
 
