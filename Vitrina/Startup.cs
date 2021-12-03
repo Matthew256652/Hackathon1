@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
+using Microsoft.AspNetCore.Identity;
+using Vitrina.Models;
 
 namespace Vitrina
 {
@@ -26,9 +28,9 @@ namespace Vitrina
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
             services.AddDbContext<VitrinaContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VitrinaContext")));
+            //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +52,7 @@ namespace Vitrina
 
             app.UseRouting();
 
+            //app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

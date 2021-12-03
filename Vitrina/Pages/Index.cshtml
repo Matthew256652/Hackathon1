@@ -5,18 +5,18 @@
     ViewData["Title"] = "Index";
 }
 <form>
-    <p>
-        Ключевые слова: <input type="text" asp-for="SearchString" />
-        <select asp-for="TransportClassSearch" asp-items="Model.TransportClasses">
-            <option value="">Отобразить всё</option>
+    <p style="float: left;">
+        <input placeholder="Kлючевые слова" style="border-radius:11px; height:35px"; type="text" asp-for="SearchString" />
+        <select style="border-radius:11px; height:35px;"asp-for="TransportClassSearch"  asp-items="Model.TransportClasses">
+            <option value="">Класс транспорта</option>
         </select>
-        <select asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
-            <option value="">Отобразить всё</option>
+        <select style="border-radius:11px; height:35px;" asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
+            <option value="">Технологическое направление</option>
         </select>
-        <select asp-for="OrganisationSearch" asp-items="Model.Organisations">
-            <option value="">Отобразить всё</option>
+        <select style="border-radius:11px; height:35px;" asp-for="OrganisationSearch"  asp-items="Model.Organisations">
+            <option value="">Организация</option>
         </select>
-        <input type="submit" value="Фильтр" ; style="border-color:white;" />
+        <input style="border-radius: 11px; background-color: #FFFFFF; border-color: #009A96; color: #009A96; height: 35px "; type="submit" value="Показать" />
 
     </p>
 </form>
