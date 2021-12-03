@@ -11,13 +11,20 @@ box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
     <img src="@Model.SingleStartup.ImageAsString"
          style="object-fit: cover; border-radius: 20px 20px 0px 0px; height: 200px; width: 100% "><img />
     <text style="margin-left: 22px; font-style: normal; font-weight: bold; font-size: 44px; line-height: 67px; color: #181818;">@Html.DisplayFor(model => model.SingleStartup.Title)</text>
-    <div style="margin-left: 85%" id="raiting">
-        @{ int i;}
+    <div style="margin-left: 80%" id="raiting">
+        
         <p>
-            @{ for (i = 0; i < Model.SingleStartup.Rate; i++)
+            @{ int i = 0;
+                for (; i < Model.SingleStartup.Rate; i++)
                 {
                     <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
-                } }
+                }
+                for (; i < 6; i++)
+                {
+                    <img src="https://i.postimg.cc/ncGg2f3G/Starempty.png" alt="* @i" width="17" height="17" />
+
+                }
+            }
         </p>
     </div>
     <a asp-route-id="@Int32.Parse(Model.SingleStartup.DevTeam)" asp-page="./DevTeamCard">

@@ -41,32 +41,3 @@ box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
 
     </div>
 </div>
-<div>
-    <h4>DevTeam</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DevTeam.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DevTeam.Name)
-        </dd>
-        <dt class="col-sm-2">
-            
-            @Html.DisplayNameFor(model => model.DevTeam.ImageString)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Model.DevTeam.ImageString" alt="@Model.DevTeam.ImageString" style="width:150px" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DevTeam.Progects)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DevTeam.Progects)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DevTeam.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>

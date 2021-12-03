@@ -4,71 +4,174 @@
 @{
     ViewData["Title"] = "Index";
 }
-<form>
-    <p style="float: left;">
-        <input placeholder="Kлючевые слова" style="border-radius:11px; height:35px"; type="text" asp-for="SearchString" />
-        <select style="border-radius:11px; height:35px;"asp-for="TransportClassSearch"  asp-items="Model.TransportClasses">
-            <option value="">Класс транспорта</option>
-        </select>
-        <select style="border-radius:11px; height:35px;" asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
-            <option value="">Технологическое направление</option>
-        </select>
-        <select style="border-radius:11px; height:35px;" asp-for="OrganisationSearch"  asp-items="Model.Organisations">
-            <option value="">Организация</option>
-        </select>
-        <input style="border-radius: 11px; background-color: #FFFFFF; border-color: #009A96; color: #009A96; height: 35px "; type="submit" value="Показать" />
-
-    </p>
-</form>
-
-<div style="margin:0% 25%; display: flex; justify-content: space-between; background: rgba(24, 24, 24, 0.05); border-radius: 24px; margin-bottom:15px;">
-    <div style="background: #FFFFFF; width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
-        <p style="color: #181818; margin-bottom:0px; text-align:center; font-size: 18px; line-height: 24px;">Продукты</p>
+<div style="display: flex; flex-direction:row; justify-content: space-between;">
+    <div style="margin-top:auto; margin-bottom:auto">
+        <form style="float:left;">
+            <p>
+                <div>Поиск:</div>
+                <div><input placeholder="Kлючевые слова" style="padding: 5px; border-radius: 11px; width: 250px; height: 35px" ; type="text" asp-for="SearchString" /></div>
+                <br />
+                <div>Фильтры</div>
+                <div>
+                    <select style="border-radius: 11px; padding: 5px; height: 35px; width: 250px;" asp-for="TransportClassSearch" asp-items="Model.TransportClasses">
+                        <option value="">Класс транспорта</option>
+                    </select>
+                </div>
+                <br />
+                <div>
+                    <select style="border-radius: 11px; padding: 5px; height: 35px; width: 250px;" asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
+                        <option value="">Технологическое направление</option>
+                    </select>
+                </div>
+                <br />
+                <div>
+                    <select style="border-radius: 11px; padding: 5px; height: 35px; width: 250px;" asp-for="OrganisationSearch" asp-items="Model.Organisations">
+                        <option value="">Организация</option>
+                    </select>
+                </div>
+                <br />
+                <div>
+                    <input style="border-radius: 11px; text-align:center; width: 250px; background-color: #FFFFFF; border-color: #009A96; color: #009A96; height: 35px " ; type="submit" value="Показать" />
+                </div>
+            </p>
+        </form>
     </div>
+    <div id="id1">
+        <div style="margin:0% 25%; display: flex; justify-content: space-between; background: rgba(24, 24, 24, 0.05); border-radius: 24px; margin-bottom:15px;">
+            <div style="background: #FFFFFF; width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+                <p style="color: #181818; margin-bottom:0px; text-align:center; font-size: 18px; line-height: 24px;">Продукты</p>
+            </div>
 
-    <div style="color: rgba(196, 196, 196, 1); width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
-        <p style="text-align:center; margin-bottom:0px; color:rgba(24, 24, 24, 0.7); font-size: 18px; line-height: 23px;">Участники</p>
+            <div style="color: rgba(196, 196, 196, 1); width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+                <p style="text-align:center; margin-bottom:0px; color:rgba(24, 24, 24, 0.7); font-size: 18px; line-height: 23px;">Участники</p>
+            </div>
+        </div>
+
+        <p>Я ПЕРВЫЙ</p>
+
+        @foreach (var item in Model.SingleStartup)
+        {
+            <br />
+            <div style="text-align: center; margin: 0% 10%; border-radius: 24px; box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="padding:10px; ">
+                                <img src=@item.ImageAsString alt="Rectangle-4" style="border-radius:16px; width:150px">
+                            </div>
+                        </td>
+
+                        <td width="100%">
+                            <div style="padding-top:10px;">
+                                <header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <h3 style="color: #181818;">@item.Title</h3><h6 style="padding-right: 5px; color: #181818;">20.11.2021</h6>
+                                    </div>
+                                    <h6 style="text-align: left; color: #181818;">Команда @item.DevTeam</h6>
+                                </header>
+                                <div>
+                                    <p style="text-align: left; color: #181818;">@item.ShortDesc</p>
+                                </div>
+                                <footer>
+                                    <h6 style="text-align: left; color: #181818;"></h6>
+                                    @{ int i = 0;
+                                        for (; i < item.Rate; i++)
+                                        {
+                                            <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
+                                        }
+                                        for (; i < 6; i++)
+                                        {
+                                            <img src="https://i.postimg.cc/ncGg2f3G/Starempty.png" alt="* @i" width="17" height="17" />
+
+                                        }
+                                    }
+                                    <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a>
+                                </footer>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        }
+    </div>
+    <div id="id2" style="display: none;">
+        <div style="margin:0% 25%; display: flex; justify-content: space-between; background: rgba(24, 24, 24, 0.05); border-radius: 24px; margin-bottom:15px;">
+            <div style="background: #FFFFFF; width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+                <p style="color: #181818; margin-bottom:0px; text-align:center; font-size: 18px; line-height: 24px;">Продукты</p>
+            </div>
+
+            <div style="color: rgba(196, 196, 196, 1); width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+                <p style="text-align:center; margin-bottom:0px; color:rgba(24, 24, 24, 0.7); font-size: 18px; line-height: 23px;">Участники</p>
+            </div>
+        </div>
+
+        <p>Я ВТОРОЙ</p>
+
+        @foreach (var item in Model.SingleStartup)
+        {
+            <br />
+            <div style="text-align: center; margin: 0% 10%; border-radius: 24px; box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="padding:10px; ">
+                                <img src=@item.ImageAsString alt="Rectangle-4" style="border-radius:16px; width:150px">
+                            </div>
+                        </td>
+
+                        <td width="100%">
+                            <div style="padding-top:10px;">
+                                <header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <h3 style="color: #181818;">@item.Title</h3><h6 style="padding-right: 5px; color: #181818;">20.11.2021</h6>
+                                    </div>
+                                    <h6 style="text-align: left; color: #181818;">Команда @item.DevTeam</h6>
+                                </header>
+                                <div>
+                                    <p style="text-align: left; color: #181818;">@item.ShortDesc</p>
+                                </div>
+                                <footer>
+                                    <h6 style="text-align: left; color: #181818;"></h6>
+                                    @{ int i = 0;
+                                        for (; i < item.Rate; i++)
+                                        {
+                                            <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
+                                        }
+                                        for (; i < 6; i++)
+                                        {
+                                            <img src="https://i.postimg.cc/ncGg2f3G/Starempty.png" alt="* @i" width="17" height="17" />
+
+                                        }
+                                    }
+                                    <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a>
+                                </footer>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        }
     </div>
 </div>
 
+<button Onclick="switchToTeams">Click</button>
 
-@foreach (var item in Model.SingleStartup)
-{
-    <br />
-    <div style="text-align:center; border: 3px solid black; margin: 0% 25%; border-radius:24px;">
-        <table>
-            <tr>
-                <td>
-                    <div style="padding:10px; ">
-                        <img src=@item.ImageAsString alt="Rectangle-4" style="border-radius:16px; width:150px">
-                    </div>
-                </td>
 
-                <td width="100%">
-                    <div style="padding-top:10px;">
-                        <header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <h3 style="color: #181818;">@item.Title</h3><h6 style="padding-right: 5px; color: #181818;">20.11.2021</h6>
-                            </div>
-                            <h6 style="text-align: left; color: #181818;">Команда @item.DevTeam</h6>
-                        </header>
-                        <div>
-                            <p style="text-align: left; color: #181818;">@item.ShortDesc</p>
-                        </div>
-                        <footer>
-                            <h6 style="text-align: left; color: #181818;"></h6>
-                            @{ for (int i = 0; i < item.Rate; i++)
-                                {
-                                    <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
-                                } }
-                            <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a>
-                        </footer>
-
-                    </div>
-                </td>
-            </tr>
-
-        </table>
-    </div>
-}
+<script>
+    function switchToTeams() {
+        document.writeln("ООО,КЛИК")
+        document.getElementById('id1').style.display = "none"
+        document.getElementById('id2').style.display = "block"
+    }
+</script>
+<script>
+    function switchToStartups() {
+        document.getElementById('id1').style.display = "block"
+        document.getElementById('id1').style.display = "non"
+    }
+</script>
 

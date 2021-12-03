@@ -1,0 +1,84 @@
+﻿@page
+@model Vitrina.Pages.Admin.AdminDashboardModel
+@{
+}
+<div style="margin: 0% 10%;">
+    <p style="font-weight: 600;font-size: 44px; line-height: 120%; text-align: center; color: #181818; margin-bottom:5%">Дашборд заявок</p>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between; border-radius: 24px;">
+        <div style="width:30%; background: rgba(196, 196, 196, 0.1);">
+            <div style="background: #A6D6D5; margin-bottom:20px; border-radius: 8px; width:100%; display: flex; padding:0px 7px; padding-top:3px; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p style="font-size: 18px;line-height: 120%;color: #000000; ">Стартапы</p>
+                <a href="" title=""><img style="padding-left:30px;" src="https://i.yapx.ru/PYJyD.png" alt=""></a>
+            </div>
+
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>L-Charge</h6>
+                <p style="font-size: 14px;margin:0px; line-height: 150%;color: #181818;">Сверхбыстрые зарядные станции для электромобилей</p>
+                <p style="text-align:right; margin:0px"><a asp-page="./Details" asp-route-id="2"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></a></p>
+            </div>
+
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>Traffic Data</h6>
+                <p style="font-size: 14px; margin:0px; line-height: 150%;color: #181818;">Разрабатывает решения для мониторинга дорожного движения</p>
+                <p style="text-align:right; margin:0px"><a asp-page="./Details" asp-route-id="7"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></a></p>
+            </div>
+        </div>
+
+        <div style="margin-left:20px; width:30%; background: rgba(196, 196, 196, 0.1); border-radius: 24px;">
+            <div style="background: #B8A6D6; border-radius: 8px; width:100%; padding:0px 7px; margin-bottom:20px; padding-top:3px; display: flex; flex-direction: row; justify-content: space-between; vertical-align:central;">
+                <p style="font-size: 18px;line-height: 120%;color: #000000;">Заказчики</p>
+                <a href="" title=""><img style="padding-left:30px;" src="https://i.yapx.ru/PYKZC.png" alt=""></a>
+
+            </div>
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>ГУП «Московский метрополитен»</h6>
+                <p style="font-size: 14px;margin:0px;line-height: 150%;color: #181818;">Внутри карточки данные из заявки.</p>
+                <p style="text-align:right; margin:0px"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></p>
+            </div>
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>ГУП «Мосгортранс» </h6>
+                <p style="font-size: 14px; margin:0px; line-height: 150%;color: #181818;">
+                    Стадия готовности продукта. Краткое описание продукта. Кейсы использования продукта...
+                </p>
+                <p style="text-align:right; margin:0px"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></p>
+            </div>
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>ГБУ «МосТрансПроект»</h6>
+                <p style="font-size: 14px;line-height: 150%; margin:0px; color: #181818;">
+                    Стадия готовности продукта. Краткое описание продукта. Кейсы использования продукта...
+                </p>
+                <p style="text-align:right; margin:0px"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></p>
+            </div>
+        </div>
+
+        <div style="margin-left:20px; width:30%; background: rgba(196, 196, 196, 0.1); border-radius: 24px;">
+            <div style="background: #A6B1D6; border-radius: 8px; margin-bottom:20px; width:100%;padding:0px 7px; padding-top:3px; display: flex; flex-direction: row; justify-content: space-between; vertical-align:central;">
+                <p style="font-size: 18px;line-height: 120%;color: #000000;">В работе с заказчиком</p>
+                <a href="" title=""><img style="padding-left:30px;" src="https://i.yapx.ru/PYKi3.png" alt=""></a>
+            </div>
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px10px; margin:10px 0px;">
+                <h6>ЦОМП</h6>
+                <p style="font-size: 14px;line-height: 150%; margin:0px; color: #181818;">
+                    Хочет поработать с такими-то стартапами.
+                </p>
+                <p style="text-align:right; margin:0px"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></p>
+            </div>
+        </div>
+
+        <div style="margin-left:20px; background: rgba(196, 196, 196, 0.1); border-radius: 24px;">
+            <div style="background: #CCCED6; margin-bottom:20px; border-radius: 8px; width:100%; padding:0px 7px; padding-top:3px; display: flex; flex-direction: row; justify-content: space-between; vertical-align:central;">
+                <p style="font-size: 18px;line-height: 120%;color: #000000;">Завершенные</p>
+                <a href="" title=""><img style="padding-left:30px;" src="https://i.yapx.ru/PYKuS.png" alt=""></a>
+            </div>
+            <div style="background: #FFFFFF; box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08); border-radius: 16px; padding:5px 10px; margin:10px 0px;">
+                <h6>ЦОДД</h6>
+                <p style="font-size: 14px;line-height: 150%; margin:0px; color: #181818;">
+                    Успешно реализована работа с такими-то стартапами.
+                </p>
+                <p style="text-align:right; margin:0px"><img src="https://i.ibb.co/YpXk9xX/Frame-28-2.png" alt="" border="0"></p>
+            </div>
+        </div>
+    </div>
+
+</div>
