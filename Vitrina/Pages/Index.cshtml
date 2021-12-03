@@ -4,47 +4,65 @@
 @{
     ViewData["Title"] = "Index";
 }
+<form>
+    <p>
+        Ключевые слова: <input type="text" asp-for="SearchString" />
+        <select asp-for="TransportClassSearch" asp-items="Model.TransportClasses">
+            <option value="">All</option>
+        </select>
+        <select asp-for="TechDirectionsSearch" asp-items="Model.TexhDirections">
+            <option value="">All</option>
+        </select>
+        <input type="submit" value="Фильтр" ; style="border-color:white;" />
 
-<h1>Index</h1>
+    </p>
+</form>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<div style="margin:0% 25%; display: flex; justify-content: space-between; background: rgba(24, 24, 24, 0.05); border-radius: 24px; margin-bottom:15px;">
+    <div style="background: #FFFFFF; width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+        <p style="color: #181818; margin-bottom:0px; text-align:center; font-size: 18px; line-height: 24px;">Продукты</p>
+    </div>
+
+    <div style="color: rgba(196, 196, 196, 1); width:50%; box-shadow: 0px 2px 9px rgba(24, 24, 24, 0.09); border-radius: 24px; padding:5px;">
+        <p style="text-align:center; margin-bottom:0px; color:rgba(24, 24, 24, 0.7); font-size: 18px; line-height: 23px;">Участники</p>
+    </div>
+</div>
 
 
-
-@foreach (var item in Model.SingleStartup) {
-<div style="text-align:center; border: 3px solid black; margin: 0% 20%; border-radius:24px;">
-    <table>
-        <tr>
-            <td>
-                <div style="padding:10px; ">
-                    <img src=@item.ImageAsString alt="Rectangle-4" style="border-radius:16px; width:150px">
-                </div>
-            </td>
-
-            <td width="100%">
-                <div style="padding-top:10px;">
-                    <header>
-                        <div style="display: flex; justify-content: space-between;">
-                            <h3>@item.Title</h3><h6 style="padding-right:5px;">20.11.2021</h6>
-                        </div>
-                        <h6 style="text-align:left;">@item.DevTeam</h6>
-                    </header>
-                    <div>
-                        <p style="text-align:left;">@item.ShortDesc</p>
+@foreach (var item in Model.SingleStartup)
+{
+    <br />
+    <div style="text-align:center; border: 3px solid black; margin: 0% 25%; border-radius:24px;">
+        <table>
+            <tr>
+                <td>
+                    <div style="padding:10px; ">
+                        <img src=@item.ImageAsString alt="Rectangle-4" style="border-radius:16px; width:150px">
                     </div>
-                    <footer>
-                        <h6></h6>
-                        Оценка экспертов + звезды
-                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
-                    </footer>
+                </td>
 
-                </div>
-            </td>
-        </tr>
+                <td width="100%">
+                    <div style="padding-top:10px;">
+                        <header>
+                            <div style="display: flex; justify-content: space-between;">
+                                <h3 style="color: #181818;">@item.Title</h3><h6 style="padding-right: 5px; color: #181818;">20.11.2021</h6>
+                            </div>
+                            <h6 style="text-align: left; color: #181818;">@item.DevTeam</h6>
+                        </header>
+                        <div>
+                            <p style="text-align: left; color: #181818;">@item.ShortDesc</p>
+                        </div>
+                        <footer>
+                            <h6 style="text-align: left; color: #181818;"></h6>
+                            Оценка экспертов + звезды
+                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                        </footer>
 
-    </table>
-</div>       
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
 }
 

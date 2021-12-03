@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.AdminPages
+namespace Vitrina.Pages.Admin.DevTeams
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace Vitrina.Pages.AdminPages
         }
 
         [BindProperty]
-        public StartupRequest StartupRequest { get; set; }
+        public DevTeam DevTeam { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace Vitrina.Pages.AdminPages
                 return NotFound();
             }
 
-            StartupRequest = await _context.StartupRequest.FirstOrDefaultAsync(m => m.ID == id);
+            DevTeam = await _context.DevTeam.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (StartupRequest == null)
+            if (DevTeam == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace Vitrina.Pages.AdminPages
                 return Page();
             }
 
-            _context.Attach(StartupRequest).State = EntityState.Modified;
+            _context.Attach(DevTeam).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Vitrina.Pages.AdminPages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StartupRequestExists(StartupRequest.ID))
+                if (!DevTeamExists(DevTeam.ID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace Vitrina.Pages.AdminPages
             return RedirectToPage("./Index");
         }
 
-        private bool StartupRequestExists(int id)
+        private bool DevTeamExists(int id)
         {
-            return _context.StartupRequest.Any(e => e.ID == id);
+            return _context.DevTeam.Any(e => e.ID == id);
         }
     }
 }

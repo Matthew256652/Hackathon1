@@ -17,5 +17,7 @@ namespace Vitrina.Data
         public DbSet<Vitrina.Models.SingleStartup> SingleStartup { get; set; }
 
         public DbSet<Vitrina.Models.StartupRequest> StartupRequest { get; set; }
+
+        public DbSet<Vitrina.Models.DevTeam> DevTeam { get; set; }
     }
 }

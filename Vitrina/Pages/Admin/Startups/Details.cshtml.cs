@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.AdminPages
+namespace Vitrina.Pages.Admin.Startups
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Vitrina.Pages.AdminPages
             _context = context;
         }
 
-        public StartupRequest StartupRequest { get; set; }
+        public SingleStartup SingleStartup { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace Vitrina.Pages.AdminPages
                 return NotFound();
             }
 
-            StartupRequest = await _context.StartupRequest.FirstOrDefaultAsync(m => m.ID == id);
+            SingleStartup = await _context.SingleStartup.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (StartupRequest == null)
+            if (SingleStartup == null)
             {
                 return NotFound();
             }

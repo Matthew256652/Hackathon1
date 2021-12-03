@@ -1,0 +1,166 @@
+﻿@page
+@model Vitrina.Pages.Admin.Startups.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].DevTeam)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].ShortDesc)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Organisation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Use)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].RequestToAccelerator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Sertification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].CompanyStaff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Site)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].AccInfSource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].PresentationLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].ImageAsString)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].AlreadyRealised)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].TechDir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleStartup[0].TransportClass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SingleStartup) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DevTeam)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Organisation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Use)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestToAccelerator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sertification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyStaff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Site)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccInfSource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresentationLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageAsString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlreadyRealised)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechDir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransportClass)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

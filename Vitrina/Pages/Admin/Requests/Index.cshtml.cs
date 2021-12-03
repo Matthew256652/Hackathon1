@@ -8,8 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.AdminPages
-{
+namespace Vitrina.Pages.Admin.Requests { 
     public class IndexModel : PageModel
     {
         private readonly Vitrina.Data.VitrinaContext _context;

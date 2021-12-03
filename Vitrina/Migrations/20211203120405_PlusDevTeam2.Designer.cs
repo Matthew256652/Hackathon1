@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vitrina.Data;
 
 namespace Vitrina.Migrations
 {
     [DbContext(typeof(VitrinaContext))]
-    partial class VitrinaContextModelSnapshot : ModelSnapshot
+    [Migration("20211203120405_PlusDevTeam2")]
+    partial class PlusDevTeam2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,6 @@ namespace Vitrina.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AccInfSource")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AlreadyRealised")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cases")
@@ -86,13 +85,7 @@ namespace Vitrina.Migrations
                     b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.Property<string>("TechDir")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TransportClass")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Use")

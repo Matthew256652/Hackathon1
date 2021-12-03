@@ -26,13 +26,12 @@ namespace Vitrina.Models
         public string PresentationLink { get; set; }
         public string Title { get; set; } = string.Empty;//+
         public string ImageAsString { get; set; }//+
-        
-        
+        public string AlreadyRealised { get; set; }
         public int Rate { get; set; }
         public string Description { get; set; } = string.Empty;
         public int Price { get; set; }
-
-        
+        public string TechDir { get; set; } = string.Empty;
+        public string TransportClass { get; set; } = string.Empty;
 
 
 
