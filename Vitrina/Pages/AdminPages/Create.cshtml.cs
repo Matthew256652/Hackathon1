@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.Startups
+namespace Vitrina.Pages.AdminPages
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace Vitrina.Pages.Startups
         }
 
         [BindProperty]
-        public SingleStartup SingleStartup { get; set; }
+        public StartupRequest StartupRequest { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace Vitrina.Pages.Startups
                 return Page();
             }
 
-            _context.SingleStartup.Add(SingleStartup);
+            _context.StartupRequest.Add(StartupRequest);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

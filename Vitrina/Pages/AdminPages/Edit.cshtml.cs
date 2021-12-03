@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.Requests
+namespace Vitrina.Pages.AdminPages
 {
     public class EditModel : PageModel
     {

@@ -8,18 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.Startups2
+namespace Vitrina.Pages
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly Vitrina.Data.VitrinaContext _context;
 
-        public DeleteModel(Vitrina.Data.VitrinaContext context)
+        public DetailsModel(Vitrina.Data.VitrinaContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public SingleStartup SingleStartup { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -36,24 +35,6 @@ namespace Vitrina.Pages.Startups2
                 return NotFound();
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            SingleStartup = await _context.SingleStartup.FindAsync(id);
-
-            if (SingleStartup != null)
-            {
-                _context.SingleStartup.Remove(SingleStartup);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

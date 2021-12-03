@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.Startups2
+namespace Vitrina.Pages
 {
     public class IndexModel : PageModel
     {

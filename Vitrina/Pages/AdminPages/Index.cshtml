@@ -1,0 +1,96 @@
+﻿@page
+@model Vitrina.Pages.AdminPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Problem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Risks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Why)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Terms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].SolveAttempts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartupRequest[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StartupRequest) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Problem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Risks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Why)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Terms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolveAttempts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

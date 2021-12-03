@@ -20,6 +20,6 @@ namespace Vitrina.Models
         public string Company { get; set; }
         public string FIO { get; set; }
         public string PhoneNumber { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

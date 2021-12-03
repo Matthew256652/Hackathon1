@@ -1,0 +1,80 @@
+﻿@page
+@model Vitrina.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div style="margin: 0% 15% 0% 15%">
+    <<div id="block1" style="overflow:hidden; margin-right: auto;
+box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 20px;">
+    <img src="@Model.SingleStartup.ImageAsString"
+         style="object-fit: cover; border-radius: 20px 20px 0px 0px; height: 200px; width: 100% "><img />
+    <text style="margin-left: 22px; font-style: normal; font-weight: bold; font-size: 44px; line-height: 67px; color: #181818;">@Html.DisplayFor(model => model.SingleStartup.Title)</text>
+    <div style="margin-left: 85%" id="raiting">
+        @{ int i;}
+        <p>
+            @{ for (i = 0; i < Model.SingleStartup.Rate; i++)
+                {
+                    <img src="https://psv4.userapi.com/c536436/u108757040/docs/d2/1b081b75f544/Star_icon.png?extra=J7atOU3fTei1CZn1t2Xi1FpKXmAeUmulAxoWOyzbvjCgcceOvxkMIxoEhT4fhBuKEAEX4SuvBcOCe3vM_vNoQpHR_JCqtr1LmrVUTtUt8_vZqblTcxeIVL1BCAZZbb8B8rbjjcQthKbYA-ca8xhJGhHa" alt="* @i" width="17" height="17" />
+                } }
+        </p>
+    </div>
+    <text style="margin-left: 22px; position: static; left: 0px; font-style: normal; font-weight: normal; font-size: 18px; line-height: 24px; color: rgba(24, 24, 24, 0.6); /* Inside Auto Layout */ flex: none; order: 1; flex-grow: 0;">@Html.DisplayFor(model => model.SingleStartup.DevTeam)</text>
+    <br />
+    <br />
+</div>
+
+
+    <div style="">
+        <div style="float:left; width: 70%; margin-top: 22px; margin-right: auto; box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1); border-radius: 24px; padding: 30px 30px 30px 30px ">
+
+            <b>Мини описание</b>
+            <p style="">
+                @Html.DisplayFor(model => model.SingleStartup.ShortDesc)
+            </p>
+            <b>Описание</b>
+            <p style="">
+                @Html.DisplayFor(model => model.SingleStartup.Description)
+            </p>
+
+            <b>Кейсы использованого продукта</b>
+
+            <p style="">
+                @Html.DisplayFor(model => model.SingleStartup.Cases)
+            </p>
+            <b>Польза продукта</b>
+
+            <p style="">
+                @Html.DisplayFor(model => model.SingleStartup.Use)
+            </p>
+            <b>Состояние проекта</b>
+            <p style="">
+                @{ if (Model.SingleStartup.State == 0)}
+                Идея
+            </p>
+            @{ if (Model.SingleStartup.State == 1)}
+            Прототип</p>
+            @{ if (Model.SingleStartup.State == 2)}
+            Продукт</p>
+            </p>
+            <a asp-page="./Index">Назад</a>
+        </div>
+
+
+        <div style="float: right; width: 27%; margin-top: 22px; border-radius: 24px; padding: 30px 30px 30px 30px; box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.1)">
+            <b>Заинтересовало предложение?</b>
+            <p>Запросите контакты у наших администраторов</p>
+            <button name="button" style="position: static; left: 0%; right: 0%; top: 0%; bottom: 0%; display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 16px 20px; border: 1px solid #009A96; box-sizing: border-box; border-radius: 16px; flex: none; order: 0; align-self: stretch; flex-grow: 0; margin: 0px 0px; "><text style="position: static; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; /* identical to box height */ /* Акцентный цвет */ color: #009A96; /* Inside Auto Layout */ flex: none; order: 0; flex-grow: 0; margin: 0px 10px; ">Связаться</text></button>
+        </div>
+
+
+
+
+    </div>
+</div>

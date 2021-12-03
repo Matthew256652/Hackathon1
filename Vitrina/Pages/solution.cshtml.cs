@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Vitrina.Data;
 using Vitrina.Models;
 
-namespace Vitrina.Pages.Startups2
+namespace Vitrina.Pages
 {
-    public class CreateModel : PageModel
+    public class ADDTHEREQModel : PageModel
     {
         private readonly Vitrina.Data.VitrinaContext _context;
 
-        public CreateModel(Vitrina.Data.VitrinaContext context)
+        public ADDTHEREQModel(Vitrina.Data.VitrinaContext context)
         {
             _context = context;
         }
@@ -25,17 +25,18 @@ namespace Vitrina.Pages.Startups2
         }
 
         [BindProperty]
-        public SingleStartup SingleStartup { get; set; }
+        public StartupRequest StartupRequest { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            StartupRequest.Status = 0;
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
-            _context.SingleStartup.Add(SingleStartup);
+            StartupRequest.Status = 0;
+            _context.StartupRequest.Add(StartupRequest);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

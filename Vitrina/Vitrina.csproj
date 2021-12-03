@@ -5,20 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Shared\Новая папка1\**" />
-    <Compile Remove="Pages\Shared\Новая папка\**" />
     <Compile Remove="Pages\Новая папка\**" />
     <Compile Remove="Новая папка\**" />
-    <Content Remove="Pages\Shared\Новая папка1\**" />
-    <Content Remove="Pages\Shared\Новая папка\**" />
     <Content Remove="Pages\Новая папка\**" />
     <Content Remove="Новая папка\**" />
-    <EmbeddedResource Remove="Pages\Shared\Новая папка1\**" />
-    <EmbeddedResource Remove="Pages\Shared\Новая папка\**" />
     <EmbeddedResource Remove="Pages\Новая папка\**" />
     <EmbeddedResource Remove="Новая папка\**" />
-    <None Remove="Pages\Shared\Новая папка1\**" />
-    <None Remove="Pages\Shared\Новая папка\**" />
     <None Remove="Pages\Новая папка\**" />
     <None Remove="Новая папка\**" />
   </ItemGroup>
@@ -33,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\AdminPages\" />
     <Folder Include="Pages\UserPages\" />
   </ItemGroup>
 

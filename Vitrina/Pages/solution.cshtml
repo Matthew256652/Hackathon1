@@ -1,0 +1,200 @@
+﻿@page
+@model Vitrina.Pages.ADDTHEREQModel
+
+@{
+    ViewData["Title"] = "Заявка";
+}
+
+<h1>ADDTHEREQ</h1>
+
+<h4>StartupRequest</h4>
+<hr />
+
+<form method="post">
+    <div style="margin: 30px 20%;">
+        <div style="background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px; padding: 0px 30px;">
+            <div style="padding-top: 20px; padding-bottom:10px;">
+                <span style="font-weight: 600; font-style: normal; font-size: 44px; line-height: 120%;">
+                    Заполните анкету и мы найдем решение вашей проблемы
+                </span>
+            </div>
+            <div style="font-size: 18px; line-height: 150%; margin: 16px 0px;">
+                <p>
+                    Если вы не смогли найти подходящее вам решение, то можете заполнить анкету ниже. Мы обязательно свяжемся с вами, когда обработаем запрос.
+                </p>
+            </div>
+            <footer style="padding-bottom:5px; font-size: 18px; line-height: 150%; margin:16px 0px;">
+                <p>Также можете связаться с нами по электронной почте: <span style="color:#009A96;">accelerator@ftim.ru</span></p>
+            </footer>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+            <div style="padding:30px; width:50%">
+                <header>
+                    <h3>Что болит?</h3>
+                    <p>Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи</p>
+                </header>
+            </div>
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Problem" class="form-control" />
+                <span asp-validation-for="StartupRequest.Problem" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Как проявляется ваша проблема?</h3>
+                    <p>Приведите описание реальной ситуации, в которой проблема бы проявилась</p>
+                </header>
+            </div>
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Condition" class="form-control" />
+                <span asp-validation-for="StartupRequest.Condition" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Что будет если проблему не решать? </h3>
+                    <p>Опишите нежелательные эффекты, которые возникают или могут возникнуть из-за того, что проблема не решается </p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Risks" class="form-control" />
+                <span asp-validation-for="StartupRequest.Risks" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Почему так происходит? </h3>
+                    <p>Какие на ваш взгляд ключевые причины возникновения проблемы? Что на ваш взгляд является причиной возникновения проблемы?</p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Why" class="form-control" />
+                <span asp-validation-for="StartupRequest.Why" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Какой желательный срок решения проблемы?</h3>
+
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Terms" class="form-control" />
+                <span asp-validation-for="StartupRequest.Terms" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>SUBJECTS</h3>
+
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Subject" class="form-control" />
+                <span asp-validation-for="StartupRequest.Subject" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Пробовали решать? </h3>
+                    <p>
+                        Как пытались решить проблему ранее? Почему эти попытки оказались неудачными или почему были признаны неудачными? Чем не устроили найденные решения? Общались ли с рынком? Если да, то с кем?
+                    </p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.SolveAttempts" class="form-control" />
+                <span asp-validation-for="StartupRequest.SolveAttempts" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Как с вами связаться? </h3>
+                    <p>
+                        Укажите наименование вашего предприятия
+                    </p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.Company" class="form-control" />
+                <span asp-validation-for="StartupRequest.Company" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Как с вами связаться? </h3>
+                    <p>
+                        Укажите ваше ФИО
+                    </p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.FIO" class="form-control" />
+                <span asp-validation-for="StartupRequest.FIO" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+            <div style="padding:30px; width:50%;">
+                <header>
+                    <h3>Как с вами связаться? </h3>
+                    <p>
+                        Укажите телефон для связи
+                    </p>
+                </header>
+            </div>
+
+            <div style="width:100%; margin-left:18px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;padding: 30px 30px 30px 30px">
+                <input asp-for="StartupRequest.PhoneNumber" class="form-control" />
+                <span asp-validation-for="StartupRequest.PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+</form>
+
+<div class="form-group">
+    <input type="submit" value="Create" class="btn btn-primary" />
+</div>
+
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
