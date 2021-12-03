@@ -1,0 +1,85 @@
+﻿@page
+@model Vitrina.Pages.Requests.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>StartupRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StartupRequest.ID" />
+            <div class="form-group">
+                <label asp-for="StartupRequest.Problem" class="control-label"></label>
+                <input asp-for="StartupRequest.Problem" class="form-control" />
+                <span asp-validation-for="StartupRequest.Problem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Condition" class="control-label"></label>
+                <input asp-for="StartupRequest.Condition" class="form-control" />
+                <span asp-validation-for="StartupRequest.Condition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Risks" class="control-label"></label>
+                <input asp-for="StartupRequest.Risks" class="form-control" />
+                <span asp-validation-for="StartupRequest.Risks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Why" class="control-label"></label>
+                <input asp-for="StartupRequest.Why" class="form-control" />
+                <span asp-validation-for="StartupRequest.Why" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Subject" class="control-label"></label>
+                <input asp-for="StartupRequest.Subject" class="form-control" />
+                <span asp-validation-for="StartupRequest.Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Terms" class="control-label"></label>
+                <input asp-for="StartupRequest.Terms" class="form-control" />
+                <span asp-validation-for="StartupRequest.Terms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.SolveAttempts" class="control-label"></label>
+                <input asp-for="StartupRequest.SolveAttempts" class="form-control" />
+                <span asp-validation-for="StartupRequest.SolveAttempts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Company" class="control-label"></label>
+                <input asp-for="StartupRequest.Company" class="form-control" />
+                <span asp-validation-for="StartupRequest.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.FIO" class="control-label"></label>
+                <input asp-for="StartupRequest.FIO" class="form-control" />
+                <span asp-validation-for="StartupRequest.FIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.PhoneNumber" class="control-label"></label>
+                <input asp-for="StartupRequest.PhoneNumber" class="form-control" />
+                <span asp-validation-for="StartupRequest.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Status" class="control-label"></label>
+                <input asp-for="StartupRequest.Status" class="form-control" />
+                <span asp-validation-for="StartupRequest.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

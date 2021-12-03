@@ -1,0 +1,263 @@
+﻿@page
+@model Vitrina.Pages.Requests.CreateModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Create</h1>
+
+<h4>StartupRequest</h4>
+<hr />
+
+<div style="margin: 0% 20%;">
+    <div style="background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px; padding: 0% 5%;">
+        <header style="flex: none; order: 0; flex-grow: 0; ">
+            <p style="font-family: Artegra Sans; font-weight: 600; font-size: 44px; line-height: 120%; ">
+                Заполните анкету и мы найдем решение вашей проблемы
+            </p>
+        </header>
+        <div>
+            <p>
+                Если вы не смогли найти подходящее вам решение, то можете заполнить анкету ниже. Мы обязательно свяжемся с вами, когда обработаем запрос.
+            </p>
+        </div>
+        <footer style="padding-bottom:5px;">
+            <p>Также можете связаться с нами по электронной почте: <span style="color:#009A96;">accelerator@ftim.ru</span></p>
+        </footer>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+        <div style="padding:10px; width:50%">
+            <header>
+                <h3>Что болит?</h3>
+                <p>Опишите своими словами существующую в организации проблему. Можно сформулировать проблему в форму задачи</p>
+            </header>
+        </div>
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Problem" class="form-control" />
+            <span asp-validation-for="StartupRequest.Problem" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Как проявляется ваша проблема?</h3>
+                <p>Приведите описание реальной ситуации, в которой проблема бы проявилась</p>
+            </header>
+        </div>
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Condition" class="form-control" />
+            <span asp-validation-for="StartupRequest.Condition" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Что будет если проблему не решать? </h3>
+                <p>Опишите нежелательные эффекты, которые возникают или могут возникнуть из-за того, что проблема не решается </p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Risks" class="form-control" />
+            <span asp-validation-for="StartupRequest.Risks" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Почему так происходит? </h3>
+                <p>Какие на ваш взгляд ключевые причины возникновения проблемы? Что на ваш взгляд является причиной возникновения проблемы?</p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Why" class="form-control" />
+            <span asp-validation-for="StartupRequest.Why" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>
+                    У кого болит?
+                </h3>
+                <p> Кто является непосредственно ответственным за проблемный участок?</p>
+
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Subject" class="form-control" />
+            <span asp-validation-for="StartupRequest.Subject" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Какой желательный срок решения проблемы</h3>
+
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Terms" class="form-control" />
+            <span asp-validation-for="StartupRequest.Terms" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Пробовали решать? </h3>
+                <p>
+                    Как пытались решить проблему ранее? Почему эти попытки оказались неудачными или почему были признаны неудачными? Чем не устроили найденные решения? Общались ли с рынком? Если да, то с кем?
+                </p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.SolveAttempts" class="form-control" />
+            <span asp-validation-for="StartupRequest.SolveAttempts" class="text-danger"></span>
+        </div>
+
+    </div>
+
+
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Как с вами связаться? </h3>
+                <p>
+                    Укажите наименование вашего предприятия
+                </p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.Company" class="form-control" />
+            <span asp-validation-for="StartupRequest.Company" class="text-danger"></span>
+        </div>
+
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Как с вами связаться? </h3>
+                <p>
+                    Укажите ваше ФИО
+                </p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.FIO" class="form-control" />
+            <span asp-validation-for="StartupRequest.FIO" class="text-danger"></span>
+        </div>
+
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top:15px;">
+
+        <div style="padding:10px; width:50%;">
+            <header>
+                <h3>Как с вами связаться? </h3>
+                <p>
+                    Укажите телефон для связи
+                </p>
+            </header>
+        </div>
+
+        <div style="width:100%; margin-left:10px; background: #FFFFFF; box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); border-radius: 24px;">
+            <input asp-for="StartupRequest.PhoneNumber" class="form-control" />
+            <span asp-validation-for="StartupRequest.PhoneNumber" class="text-danger"></span>
+        </div>
+
+    </div>
+    <div style="text-align:center; border: 3px solid #009A96; margin: 0% 40%; border-radius:24px; margin-top:20px;">
+        <h6 style="color:
+#009A96;">
+            Отправить анкету
+        </h6>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Problem" class="control-label"></label>
+                <input asp-for="StartupRequest.Problem" class="form-control" />
+                <span asp-validation-for="StartupRequest.Problem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Condition" class="control-label"></label>
+                <input asp-for="StartupRequest.Condition" class="form-control" />
+                <span asp-validation-for="StartupRequest.Condition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Risks" class="control-label"></label>
+                <input asp-for="StartupRequest.Risks" class="form-control" />
+                <span asp-validation-for="StartupRequest.Risks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Why" class="control-label"></label>
+                <input asp-for="StartupRequest.Why" class="form-control" />
+                <span asp-validation-for="StartupRequest.Why" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Subject" class="control-label"></label>
+                <input asp-for="StartupRequest.Subject" class="form-control" />
+                <span asp-validation-for="StartupRequest.Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Terms" class="control-label"></label>
+                <input asp-for="StartupRequest.Terms" class="form-control" />
+                <span asp-validation-for="StartupRequest.Terms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.SolveAttempts" class="control-label"></label>
+                <input asp-for="StartupRequest.SolveAttempts" class="form-control" />
+                <span asp-validation-for="StartupRequest.SolveAttempts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.Company" class="control-label"></label>
+                <input asp-for="StartupRequest.Company" class="form-control" />
+                <span asp-validation-for="StartupRequest.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.FIO" class="control-label"></label>
+                <input asp-for="StartupRequest.FIO" class="form-control" />
+                <span asp-validation-for="StartupRequest.FIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartupRequest.PhoneNumber" class="control-label"></label>
+                <input asp-for="StartupRequest.PhoneNumber" class="form-control" />
+                <span asp-validation-for="StartupRequest.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Отправить заявку" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

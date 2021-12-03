@@ -1,0 +1,110 @@
+﻿@page
+@model Vitrina.Pages.Requests.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr> 
+            <td>
+                <div><b>Проблема</b></div>
+            </td>
+            <td>
+                <div><b>Условия возникновения</b></div>
+            </td>
+            <td>
+                <div><b>Риски</b></div>
+            </td>
+            <td>
+                <div><b>Причина проблемы</b></div>
+            </td>
+            <td>
+                <div><b>Субъект проблемы</b></div>
+            </td>
+            <td>
+                <div><b>Срок решения</b></div>
+            </td>
+            <td>
+                <div><b>Предпринятые попытки</b></div>
+            </td>
+            <td>
+                <div><b>ФИО</b></div>
+            </td>
+            <td>
+                <div><b>Телефон</b></div>
+            </td>
+            <td>
+                <div><b>Статус</b></div>
+            </td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StartupRequest)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Problem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Condition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Risks)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Why)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Terms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SolveAttempts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @{
+                        string str = "";
+                        switch (item.Status)
+                        {
+                            case 0:
+                                str = "Заявка подана";
+                                break;
+                            case 1:
+                                str = "Заявка принята";
+                                break;
+                            case 2:
+                                str = "Заявка отклонена";
+                                break;
+                        }
+                    }
+                    <div>@str</div>
+                </td>
+                <td>
+
+                    <a asp-page="./Edit" asp-route-id="@item.ID"><img src="https://www.pngitem.com/pimgs/m/265-2656349_button-background-buttons-transparent-electric-blue-hd-png.png" width="80"/></a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
