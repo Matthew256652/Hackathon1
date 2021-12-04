@@ -10,11 +10,7 @@
 * C# ASP.net Core 5
 * HTML/CSS
 * MS SQLServer
-* Git
-* Github
-### Демо
-Демо: [Ссылка на сайт]
-
+* Git, Github
 # Среда запуска
 1.Развёртывание проекта осуществляется на Windows 10 в среде разработки Visual Studio 2019
 2.Требуется установка Net Core 5
