@@ -76,7 +76,7 @@ border-radius: 16px; margin-bottom:25px;">
             var startups = from s in _context.SingleStartup select s;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                startups = startups.Where(r => r.Description.Contains(SearchString)||r.ShortDesc.Contains(SearchString));
+                startups = startups.Where(r => r.Description.Contains(SearchString)||r.ShortDesc.Contains(SearchString)||r.Title.Contains(SearchString));
             }
 
             if (!string.IsNullOrEmpty(TechDirectionsSearch))

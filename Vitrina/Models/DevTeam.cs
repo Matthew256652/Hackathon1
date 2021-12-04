@@ -11,5 +11,6 @@ namespace Vitrina.Models
         public string Name { get; set; } = string.Empty;//+
         public string ImageString { get; set; }
         public string Progects { get; set; }
+        public string Desc { get; set; }
     }
 }
